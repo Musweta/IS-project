@@ -1,0 +1,93 @@
+<!-- HTML file for the Product Listing page -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ExportLink - Browse Products</title>
+
+  <!-- External Fonts and Icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/css/all.min.css
+  https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap
+
+  <!-- Tailwind CSS CDN -->
+  https://cdn.tailwindcss.com
+
+  <!-- Link to external CSS file -->
+  <link rel="stylesheet" href="Css/productListing.css" />
+</head>
+<body>
+  <!-- Main container -->
+  <div class="wireframe-container">
+    <div class="pb-8">
+      <!-- Header Navigation -->
+      <header class="header-nav">
+        <div class="logo">ExportLink</div>
+        <nav class="nav-links">
+          <a href="product_listing.html" class="text-blue-700 font-bold">Browse Products</a>
+          <a href="order_management.html">My Orders</a>
+          <a href="#">Profile</a>
+          <a href="index.html">Logout</a>
+        </nav>
+      </header>
+
+      <!-- Page Title -->
+      <h1 class="text-2xl font-bold text-gray-800 mb-6">Browse Products</h1>
+
+      <!-- Search and Filters -->
+      <div class="mb-6 space-y-4 md:space-y-0 md:flex md:items-end md:space-x-4">
+        <div class="flex-1">
+          <label for="search" class="block text-sm font-medium text-gray-700 mb-1">Search Products:</label>
+          <div class="flex">
+            <input type="text" id="search" placeholder="e.g., Avocados, Coffee" class="flex-1 rounded-r-none" />
+            <button class="btn-primary rounded-l-none px-6">Go</button>
+          </div>
+        </div>
+        <div class="w-full md:w-auto">
+          <label for="category" class="block text-sm font-medium text-gray-700 mb-1">Filter by Category:</label>
+          <select id="category" class="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <option>All Categories</option>
+            <option>Fruits</option>
+            <option>Vegetables</option>
+            <option>Beverages</option>
+            <option>Grains</option>
+          </select>
+        </div>
+        <div class="w-full md:w-auto">
+          <label for="sort" class="block text-sm font-medium text-gray-700 mb-1">Sort by:</label>
+          <select id="sort" class="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <option>Newest</option>
+            <option>Price: Low to High</option>
+            <option>Price: High to Low</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Product Grid -->
+      <div class="product-grid">
+        <!-- Product Cards -->
+        <!-- Repeat this block for each product -->
+        <div class="product-card">
+          https://placehold.co/250x150/e0e0e0/555555?text=Avocados
+          <div class="details">
+            <h3 class="text-lg font-semibold text-gray-800 mb-1">Hass Avocados</h3>
+            <p class="text-gray-600 mb-3">Price: $2/kg</p>
+            <button class="btn-secondary w-full">View Details</button>
+            <button class="btn-primary w-full mt-2" onclick="alert('Contacting Farmer for Hass Avocados')">Contact Farmer</button>
+          </div>
+        </div>
+        <!-- Add more product cards as needed -->
+      </div>
+
+      <!-- Pagination -->
+      <div class="pagination">
+        <a href="#" onclick="alert('Previous page')">&lt; Prev</a>
+        <a href="#" class="active">1</a>
+        <a href="#">2</a>
+        <a href="#">3</a>
+        <a href="#" onclick="alert('Next page')">Next &gt;</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html> 
