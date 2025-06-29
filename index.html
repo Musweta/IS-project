@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ExportLink Platform</title>
+  https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css
+  <link href="https://fonts.googleapis.com/css2?family=00;400;600;700&display=swap
+  https://cdn.tailwindcss.com
+  <link rel="stylesheet" href="css/styles.css" />
+head>
+<body>
+  <div class="wireframe-container" id="wireframeContainer">
+    <!-- Dynamic content will be injected here -->
+  </div>
+
+  <!-- Core JS -->
+  <script src="js/main.js"></script>
+  <script src="js/login.js"></script>
+  <script src="js/registration.js"></script>
+  <script src="js/farmerDashboard.js"></script>
+  <script src="js/productListing.js"></script>
+  <script src="js/orderManagement.js"></script>
+  <script src="js/adminDashboard.js"></script>
+  <script src="js/manageUsers.js"></script>
+</body>
+</html>
+<script>
+  // Initialize the application
+  document.addEventListener('DOMContentLoaded', function () {
+    // Load the initial page
+    loadPage('login');
+  });
+
+  // Function to load a specific page
+  function loadPage(page) {
+    const container = document.getElementById('wireframeContainer');
+    container.innerHTML = ''; // Clear previous content
+
+    switch (page) {
+      case 'login':
+        container.innerHTML = '<h1>Login Page</h1>'; // Placeholder for login page
+        break;
+      case 'registration':
+        container.innerHTML = '<h1>Registration Page</h1>'; // Placeholder for registration page
+        break;
+      case 'farmerDashboard':
+        container.innerHTML = '<h1>Farmer Dashboard</h1>'; // Placeholder for farmer dashboard
+        break;
+      case 'productListing':
+        container.innerHTML = '<h1>Product Listing</h1>'; // Placeholder for product listing
+        break;
+      case 'orderManagement':
+        container.innerHTML = '<h1>Order Management</h1>'; // Placeholder for order management
+        break;
+      case 'adminDashboard':
+        container.innerHTML = '<h1>Admin Dashboard</h1>'; // Placeholder for admin dashboard
+        break;
+      case 'manageUsers':
+        container.innerHTML = '<h1>Manage Users</h1>'; // Placeholder for manage users
+        break;
+      default:
+        container.innerHTML = '<h1>404 - Page Not Found</h1>';
+    }
+  }
+</script>
+<script>
+  // This script will handle the initial loading of the login page
+  document.addEventListener('DOMContentLoaded', function () {
+    // Load the initial login page
+    loadPage('login');
+  });
+</script>   
