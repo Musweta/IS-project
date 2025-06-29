@@ -1,2 +1,10 @@
 pages = pages || {};
 pages.productListing = `<div class='text-center py-10'><h1 class='text-2xl font-bold'>Product Listing</h1><p>List and manage your agricultural products here.</p></div>`;
+pages.productListing += `<div class='flex justify-center mt-10'><button class='btn btn-primary'>View All Products</button></div>`;
+pages.productListing += `<div class='flex justify-center mt-10'><button class='btn btn-secondary'>Add New Product</button></div>`;
+pages.productListing += `<div class='flex justify-center mt-10'><button class='btn btn-success'>Edit Product</button></div>`;
+pages.productListing += `<div class='flex justify-center mt-10'><button class='btn btn-warning'>Delete Product</button></div>`;
+pages.productListing += `<div class='flex justify-center mt-10'><button class='btn btn-info'>Search Product</button></div>`;
+pages.productListing += `<div class='flex justify-center mt-10'><button class='btn btn-dark'>Export Product Data</button></div>`;
+pages.productListing += `<div class='flex justify-center mt-10'><button class='btn btn-link'>Back to Farmer Dashboard</button></div>`;
+pages.productListing += `<div class='text-center mt-10'><p>&copy; 2025 ExportLink. All rights reserved.</p></div>`;     

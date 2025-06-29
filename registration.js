@@ -26,4 +26,5 @@ pages.registration = `
     </div>
   </div>
 `;
-// This page will allow users to register by providing their name, email, and password.
+// Add the registration page to the pages object
+pages.registration += `<div class='text-center mt-10'><p>&copy; 2025 ExportLink. All rights reserved.</p></div>`;   
