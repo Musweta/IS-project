@@ -1,30 +1,36 @@
-pages = pages || {};
-pages.registration = `
-  <div class="flex flex-col items-center justify-center min-h-[500px] py-10">
-    <div class="text-3xl font-bold text-gray-800 mb-2">ExportLink</div>
-    <div class="text-lg text-gray-600 mb-8">Create Your Account</div>
-    <div class="bg-white p-8 rounded-xl shadow-lg w-full max-w-md">
-      <h2 class="text-2xl font-semibold text-center text-gray-800 mb-6">User Registration</h2>
-      <div class="space-y-4">
-        <div>
-          <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Full Name:</label>
-          <input type="text" id="name" placeholder="John Doe" class="w-full">
-        </div>
-        <div>
-          <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address:</label>
-          <input type="email" id="email" placeholder="john.doe@example.com" class="w-full">
-        </div>
-        <div>
-          <label for="password" class="block text-sm font-medium text-gray-700 mb-1">Password:</label>
-          <input type="password" id="password" placeholder="••••••••" class="w-full">
-        </div>
-        <button class="btn-primary w-full mt-4" onclick="loadPage('login')">REGISTER</button>
-      </div>
-      <p class="text-center text-sm text-gray-600 mt-6">
-        Already have an account? <a href="#" class="link-text" onclick="loadPage('login')">Login</a>
-      </p>
-    </div>
-  </div>
-`;
-// Add the registration page to the pages object
-pages.registration += `<div class='text-center mt-10'><p>&copy; 2025 ExportLink. All rights reserved.</p></div>`;   
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.querySelector("form");
+  const passwordInput = document.getElementById("regPassword");
+  const confirmPasswordInput = document.getElementById("confirmPassword");
+
+  form.addEventListener("submit", function (e) {
+    // Check required fields
+    const requiredFields = ["fullName", "regEmail", "regPassword", "confirmPassword"];
+    let allFilled = true;
+
+    requiredFields.forEach(function (id) {
+      const field = document.getElementById(id);
+      if (!field || field.value.trim() === "") {
+        allFilled = false;
+        field.classList.add("border-red-500"); // Highlight empty fields
+      } else {
+        field.classList.remove("border-red-500");
+      }
+    });
+
+    if (!allFilled) {
+      e.preventDefault();
+      alert("Please fill in all required fields.");
+      return;
+    }
+
+    // Check if passwords match
+    if (passwordInput.value !== confirmPasswordInput.value) {
+      e.preventDefault();
+      alert("Passwords do not match!");
+      confirmPasswordInput.classList.add("border-red-500");
+    } else {
+      confirmPasswordInput.classList.remove("border-red-500");
+    }
+  });
+});
