@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ExportLink - User Login</title>
   <!-- Link to external CSS file -->
   <link rel="stylesheet" href="CSS/index.css">
 </head>
 <body>
-
-  <!-- ✅ Responsive Navigation Bar -->
-  <div class="navbar">
+  <!-- Responsive Navigation Bar -->
+  <nav class="navbar">
     <a href="index.html">Home</a>
 
     <div class="dropdown">
-      <button class="dropdown-btn">HTML Pages</button>
+      <button class="dropdown-btn" aria-haspopup="true" aria-expanded="false">HTML Pages</button>
       <div class="dropdown-content">
-        <a href="html/adminDashboard.html">Admin Dashboard</ahtml/farmerdashboard.html">Farmer Dashboard</a>
+        <a href="html/adminDashboard.html">Admin Dashboard</a>
+        <a href="html/farmerDashboard.html">Farmer Dashboard</a>
         <a href="html/login.html">Login</a>
         <a href="html/manageUsers.html">Manage Users</a>
         <a href="html/ordermanagement.html">Order Management</a>
@@ -26,7 +26,7 @@
     </div>
 
     <div class="dropdown">
-      <button class="dropdown-btn">PHP Pages</button>
+      <button class="dropdown-btn" aria-haspopup="true" aria-expanded="false">PHP Pages</button>
       <div class="dropdown-content">
         <a href="PhP/adminDashboard.php">Admin Dashboard (PHP)</a>
         <a href="PhP/db.php">Database Config</a>
@@ -34,29 +34,40 @@
         <a href="PhP/index.php">PHP Index</a>
       </div>
     </div>
-  </div>
+  </nav>
 
-  <!-- ✅ Page Content -->
+  <!-- Page Content -->
   <main>
     <h1>ExportLink</h1>
     <p>Connecting Farmers to the World</p>
 
-    <h3>User Login</h3>
+    <h2>User Login</h2>
 
     <!-- Login Form -->
-    <form action="html/farmerDashboard.html" method="POST">
+    <form action="PhP/login.php" method="POST">
       <label for="email">Email Address:</label><br>
-      <input type="email" id="email" name="email" required><br><br>
+      <input type="email" id="email" name="email" required aria-required="true"><br><br>
 
       <label for="password">Password:</label><br>
-      <input type="password" id="password" name="password" required><br>
-      <a href="#">Forgot Password?</a><br><br>
+      <input type="password" id="password" name="password" required aria-required="true"><br>
+      <a href="html/forgot-password.html" aria-label="Recover your password">Forgot Password?</a><br><br>
 
       <button type="submit">LOGIN</button>
     </form>
 
-    <p>Don't have an account? <a href="html/registration.html">Sign Up Now</a></p>
+    <p>Don't have an account? <a href="html/registration.html" aria-label="Sign up for a new account">Sign Up Now</a></p>
   </main>
 
+  <!-- Optional JavaScript for Dropdown (if not handled by CSS) -->
+  <script>
+    document.querySelectorAll('.dropdown-btn').forEach(button => {
+      button.addEventListener('click', () => {
+        const dropdownContent = button.nextElementSibling;
+        const isExpanded = button.getAttribute('aria-expanded') === 'true';
+        button.setAttribute('aria-expanded', !isExpanded);
+        dropdownContent.style.display = isExpanded ? 'none' : 'block';
+      });
+    });
+  </script>
 </body>
 </html>
