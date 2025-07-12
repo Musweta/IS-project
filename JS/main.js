@@ -11,5 +11,5 @@ function loadPage(pageName) {
 }
 
 // Load default page
-loadPage('login');
+loadPage('productListing');
 
