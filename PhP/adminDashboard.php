@@ -73,6 +73,13 @@ $stats = [
                   <button class="text-green-600 font-medium mr-2">Approve</button>
                   <button class="text-red-600 font-medium">Reject</button>
                 </td>
+                <td>
+                  <td>
+  <button class="btn-approve text-green-600 font-medium mr-2" data-id="<?= $entry['verification_id'] ?>">Approve</button>
+  <button class="btn-reject text-red-600 font-medium" data-id="<?= $entry['verification_id'] ?>">Reject</button>
+</td>
+
+                </td>
               </tr>
             <?php endforeach; ?>
           </tbody>
