@@ -4,93 +4,72 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ExportLink - Admin Dashboard</title>
-  https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css
-  https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap
-  https://cdn.tailwindcss.com
+
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Custom CSS -->
   <link rel="stylesheet" href="CSS/adminDashboard.css" />
-  <!-- Navigation Links to Other Pages -->
-        <nav>
-            <ul>
-                <li><a href="html/adminDashboard.html">Admin</a></li>
-                <li><a href="html/manageUsers.html">Manage users</a></li>
-            </ul>
-        </nav>
 </head>
-<body>
-  <div class="wireframe-container">
-    <div class="pb-8">
-      <header class="header-nav">
-        <div class="logo text-blue-700">ExportLink Admin</div>
-        <nav class="nav-links">
-          <a href="admin_dashboard.html" class="text-blue-700 font-bold">Verifications</a>
-          <a href="manage_users.html">Manage Users</a>
-          <a href="#" onclick="alert('Generating Reports...')">Reports</a>
-          <a href="index.html">Logout</a>
-        </nav>
-      </header>
-      <h1 class="text-2xl font-bold text-gray-800 mb-6">Administrator Dashboard</h1>
-      <h2 class="text-xl font-semibold text-gray-800 mb-4">Pending Importer Verifications</h2>
-      <div class="overflow-x-auto rounded-lg shadow-sm mb-8">
-        <table>
-          <thead>
+<body class="font-inter bg-gray-50 text-gray-800">
+
+  <!-- Navigation -->
+  <nav class="bg-white shadow p-4 mb-6">
+    <ul class="flex space-x-4">
+      <.html" class="text-blue-600 hover:underline">Admin</a></li>
+      <li><a href="html/manageUsers.html" class="text-blue-600 hover:underline">Manage Users</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Container -->
+  <div class="max-w-7xl mx-auto px-4">
+    <header class="flex justify-between items-center mb-8">
+      <div class="text-2xl font-bold text-blue-700">ExportLink Admin</div>
+      <nav class="space-x-4">
+        <a href="admin_dashboard.html" class="text-blue-700 font-bold">Verifications</a>
+        <a href="manage_users.html" class="text-blue-700">Manage Users</a>
+        <a href="#" onclick="alert('Generating Reports...')" class="text-blue-700">Reports</a>
+        <a href="login.html" class="text-red-600">Logout</a>
+      </nav>
+    </header>
+
+    <h1 class="text-3xl font-bold mb-6">Administrator Dashboard</h1>
+
+    <section class="mb-10">
+      <h2 class="text-xl font-semibold mb-4">Pending Importer Verifications</h2>
+      <div class="overflow-x-auto bg-white shadow rounded-lg">
+        <table class="min-w-full text-left">
+          <thead class="bg-gray-100">
             <tr>
-              <th>Company Name</th>
-              <th>Submitted On</th>
-              <th>Action</th>
+              <th class="p-4">Company Name</th>
+              <th class="p-4">Submitted On</th>
+              <th class="p-4">Action</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>Global Fruit Co.</td>
-              <td>2025-06-28</td>
-              <td>
-                <button class="text-blue-600 font-medium mr-2">Review</button>
-                <button class="text-green-600 font-medium mr-2">Approve</button>
+            <tr class="border-t">
+              <td class="p-4">Global Fruit Co.</td>
+              <td class="p-4">2025-06-28</td>
+              <td class="p-4 space-x-2">
+                <button class="text-blue-600 font-medium">Review</button>
+                <button class="text-green-600 font-medium">Approve</button>
                 <button class="text-red-600 font-medium">Reject</button>
               </td>
             </tr>
-            <tr>
-              <td>Euro Veggies Ltd.</td>
-              <td>2025-06-27</td>
-              <td>
-                <button class="text-blue-600 font-medium mr-2">Review</button>
-                <button class="text-green-600 font-medium mr-2">Approve</button>
+            <tr class="border-t">
+              <td class="p-4">Euro Veggies Ltd.</td>
+              <td class="p-4">2025-06-27</td>
+              <td class="p-4 space-x-2">
+                <button class="text-blue-600 font-medium">Review</button>
+                <button class="text-green-600 font-medium">Approve</button>
                 <button class="text-red-600 font-medium">Reject</button>
               </td>
             </tr>
           </tbody>
         </table>
       </div>
-      <h2 class="text-xl font-semibold text-gray-800 mb-4">System Overview</h2>
-      <div class="dashboard-stats">
-        <div class="stat-card">
-          <div class="value">1,540</div>
-          <div class="label">Total Users</div>
-        </div>
-        <div class="stat-card">
-          <div class="value">850</div>
-          <div class="label">Products Listed</div>
-        </div>
-        <div class="stat-card">
-          <div class="value">1,200</div>
-          <div class="label">Farmers</div>
-        </div>
-        <div class="stat-card">
-          <div class="value">15</div>
-          <div class="label">Orders Today</div>
-        </div>
-        <div class="stat-card">
-          <div class="value">340</div>
-          <div class="label">Importers</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</body>
-<script>
-  document.querySelector('.btn-primary')?.addEventListener('click', function(event) {
-    event.preventDefault();
-    alert('Changes saved successfully!');
-  });
-</script>
-</html>
+    </section>
+
+    <section
